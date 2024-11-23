@@ -44,3 +44,23 @@ function friends(numbs =[]){
 }
 
 friends([01818, 01897, 01989]);
+friends([]);
+
+//the following function does not include defalt object parameter
+function person({ name, age, city }) {
+    if (!name || !age || !city) {
+        console.log("Missing information");
+    } else {
+        console.log(`Name: ${name}, Age: ${age}, City: ${city}`);
+    }
+}
+
+// Calling the function with an object
+person({ name: 'Sayeed', age: 25, city: 'Dhaka' });
+
+// the following function includes defalt object parameter 
+function person({ name = 'Unknown', age = 0, city = 'Unknown' } = {}) {
+    console.log(`Name: ${name}, Age: ${age}, City: ${city}`);
+}
+
+person({ name: 'Arefin' }); // Only passing the name property
